@@ -8,6 +8,11 @@ This is a simple python program which will extract all of the music tracks from 
 2. you have python 3 installed
 
 ---
+### Why was this necessary?
+
+The way that minecraft stores its files makes extracting them difficult to do by hand.  While the files aren't encrypted or stored in strange formats, they are all stored as their file hashs.  I *think* this is to make storing all of the different game assets in the same folder structure for different versions, while allowing for file version updates, but not changing the actual asset names possible and convenient.  Each version of the game comes with a new json based index file containing the necessary lookup values to go from the asset name and path to the hash file name.  The program simply finds the latest version of that file, and does all the table lookups for you.  
+
+---
 ### Usage
 **example**: 
 python3 extractor.py /home/user/.minecraft/ /home/user/Music/minecraft-music
